@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'corsheaders',
     #Ultima linea agragada
-    'pointsale',
+    'pointsale.apps.PointsaleConfig',
 ]
 
 MIDDLEWARE = [
