@@ -1,1 +1,2 @@
-web: gunicorn HandSale.wsgi:application --log-file -
+web: gunicorn HandSale.wsgi --log-file -
+web: gunicorn pointsale.wsgi --log-file -
