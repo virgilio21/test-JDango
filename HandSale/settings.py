@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -53,8 +54,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'HandSale.urls'
@@ -92,14 +92,13 @@ WSGI_APPLICATION = 'HandSale.wsgi.application'
 #    }
 #}
 
-import dj_database_url
-from decouple import config
-DATABASES = {
-    'default':dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
+#import dj_database_url
+#from decouple import config
+#DATABASES = {
+ ##      default=config('DATABASE_URL')
+ #   )
 
-}
+#}
 
 
 #Rest Framework
@@ -154,9 +153,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 #Duda sobre si poner staticfiles o static
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 
 
@@ -189,3 +188,5 @@ CORS_ALLOW_METHODS = (
     'POST',
     'PUT',
 )
+
+django_heroku.settings(locals())
