@@ -78,19 +78,19 @@ TEMPLATES = [
 WSGI_APPLICATION = 'HandSale.wsgi.application'
 
 
-# Database
+#Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'dbhandsale',
-#        'USER': 'david_rodriguez',
-#        'PASSWORD': 'master',
-#        'HOST': 'localhost',
-#        'PORT': '',
-#    }
-#}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dbhandsale',
+        'USER': 'virgilio',
+        'PASSWORD': 'virgilio21',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
 
 #import dj_database_url
 #from decouple import config
