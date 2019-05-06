@@ -176,7 +176,6 @@ CORS_ALLOW_HEADERS = (
     'authorization',
     'Authorization',
     'x-csrftoken',
-    'http://127.0.0.1:8000',
     'Access-Control-Allow-Origin'
 )
 
